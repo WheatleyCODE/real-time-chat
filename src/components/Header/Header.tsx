@@ -10,7 +10,6 @@ const Header = () => {
         <img className="Header__logo" src={logo} alt="logo" />
         <Button text="Авторизация" />
       </div>
-      <div className="Header__sub-header" />
     </div>
   )
 }
