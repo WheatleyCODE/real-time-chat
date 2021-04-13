@@ -3,39 +3,40 @@
 .Landing {
   h1 {
     font-size: 25px;
+    color: $colorDarkBlue;
   }
 
-  padding-top: 40px;
-  padding-bottom: 40px;
+  // padding-top: 1px;
+  // padding-bottom: 1px;
 
-  background-color: $colorDarkBlue;
+  // background-color: $colorDarkBlue;
 
   &__block {
-    padding-top: 40px;
+    padding-top: 60px;
     width: 100%;
-    height: 350px;
+    height: 400px;
     background-color:$colorWhite;
-    border-radius: 10% 10% 0 0;
+    // border-radius: 10% 10% 0 0;
   }
 
   &__block-blue {
     background-color: $colorBWhite;
     width: 100%;
-    height: 300px;
-    border-radius: 0 0 10% 10%;
+    height: 350px;
+    // border-radius: 0 0 10% 10%;
     position: relative;
     z-index: 10;
-    box-shadow: 10px 10px 0 0px $colorDarkYellow;
+    // box-shadow: 0px 3px 0 0px $colorDarkBlue;
 
   }
 
   &__block-orange {
     background-color: $colorYellow;
     width: 100%;
-    height: 500px;
-    border-radius: 0 0 10% 10%;
+    height: 350px;
+    // border-radius: 0 0 10% 10%;
     position: relative;
-    margin-top: -70px;
+    // margin-top: -70px;
   }
 
   &__circles {
@@ -66,16 +67,16 @@
   }
 
   .title {
-    padding-top: 100px;
+    padding-top: 110px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
     span {
-      font-size: 18px;
-      font-weight: 400;
-      margin-bottom: 15px;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 25px;
       margin-top: 5px;
       font-weight: 500;
       color: $colorDarkBlue;
@@ -101,8 +102,8 @@
       margin-top: 100px;
 
       .title__span {
-        font-size: 30px;
-        font-weight: 900;
+        font-size: 22px;
+        font-weight: 700;
       }
 
       .FBlogo {
@@ -111,7 +112,7 @@
 
       .start {
         width: 250px;
-        height: 100px;
+        height: 70px;
         border-radius: 5px;
         font-size: 25px;
         font-weight: 900;
@@ -143,6 +144,19 @@
       &:hover {
         box-shadow: none;
       }
+    }
+  }
+
+  .title.FB {
+    padding-top: -0px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .circle {
+    &:nth-child(2) {
+      margin-right: 80px !important;
+      margin-left: 80px !important;
     }
   }
 }

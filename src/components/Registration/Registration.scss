@@ -1,3 +1,13 @@
+@import '../../styles/variables';
 .Registration {
-  
+  width: 100%;
+  height: Calc(100vh - 160px);
+  background-color: $colorDarkBlue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    color: #fff;
+  }
 }

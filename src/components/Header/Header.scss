@@ -7,6 +7,16 @@
   display: flex;
   flex-wrap: wrap;
 
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      color: $colorWhite;
+      margin-left: 10px;
+    }
+  }
+
   &__sub-header {
     width: 100%;
     height: 5px;
