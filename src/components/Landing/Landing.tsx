@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import logo from '../../img/logo.png'
 import './Landing.scss'
 
@@ -7,8 +8,10 @@ const Landing = () => {
     <div className="Landing">
       <div className="Landing__block">
         <div className="Landing__title">
-          <img src={logo} alt="logo" />
-          <h1>Real time chat</h1>
+          <NavLink to="/">
+            <img src={logo} alt="logo" />
+            <h1>Real time chat</h1>
+          </NavLink>
         </div>
       </div>
       <div className="Landing__block-blue">
@@ -26,7 +29,9 @@ const Landing = () => {
         <div className="title">
           <div className="title__container">
             <span>Авторизируйтесь</span>
-            <button className="google">С помощью Google</button>
+            <NavLink to="/registration">
+              <button className="google">С помощью Google</button>
+            </NavLink>
           </div>
         </div>
       </div>
@@ -36,7 +41,9 @@ const Landing = () => {
             <div>
               <span className="title__span">Общайтесь в облаке FireBase</span>
             </div>
-            <button className="start">НАЧАТЬ</button>
+            <NavLink to="/chat">
+              <button className="start">НАЧАТЬ</button>
+            </NavLink>
           </div>
         </div>
       </div>

@@ -8,6 +8,16 @@
   align-items: center;
 
   h1 {
-    color: #fff;
+    color: $colorDarkBlue;
+    margin-bottom: 30px;
+  }
+
+  &__block {
+    width: 400px;
+    min-width: 310px;
+    background-color: $colorBlue;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 60px 20px;
   }
 }
