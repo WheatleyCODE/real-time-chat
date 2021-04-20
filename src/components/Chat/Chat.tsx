@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import firebase from 'firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
@@ -14,13 +14,19 @@ const Chat = () => {
   const [ messages ] = useCollectionData(
     firestore.collection('messages').orderBy('createdAt')
   )
+  useEffect(() => {
+    scrollFix()
+  }, [messages])
+  
   const onTextareaChangeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setValue(event.target.value)
   }
 
-  const elem = document.querySelector('.chat-column__message-block')
-  if (elem) {
-    elem.scrollTop = elem.scrollHeight
+  const scrollFix = () => {
+    const elem = document.querySelector('.chat-column__message-block')
+    if (elem) {
+      elem.scrollTop = elem.scrollHeight
+    }
   }
 
   const onSendMessage = async() => {
