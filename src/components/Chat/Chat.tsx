@@ -8,7 +8,8 @@ import './Chat.scss'
 
 const Chat = () => {
   const { auth, firestore } = useContext(Context)
-  const ref = useRef(null)
+  const f: any = null
+  const ref = useRef(f)
   const [ user ] = useAuthState(auth)
   const [ value, setValue ] = useState('')
   const [ messages ] = useCollectionData(
@@ -20,6 +21,10 @@ const Chat = () => {
   
   const onTextareaChangeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setValue(event.target.value)
+  }
+
+  const enterPressHandler = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.code === "Enter") onSendMessage()
   }
 
   const scrollFix = () => {
@@ -40,13 +45,14 @@ const Chat = () => {
       })
   
       setValue('')
+      ref.current.focus()
     }
   }
 
   return(
     <div className="Chat">
       <div className="Chat__chat-column">
-        <div ref={ref} className="chat-column__message-block">
+        <div className="chat-column__message-block">
         { messages?.map(message => {
           if (message.uid === user?.uid) return (
             <div key={message.createdAt} className="message reverse">
@@ -63,7 +69,7 @@ const Chat = () => {
         })}
         </div>
         <div className="chat-column__input-block">
-          <textarea onChange={onTextareaChangeHandler} value={value} className="input-block__textarea" />
+          <textarea ref={ref} onKeyDown={enterPressHandler} onChange={onTextareaChangeHandler} value={value} className="input-block__textarea" />
           <Button onClick={onSendMessage} size="large" text=">" />
         </div>
       </div>
