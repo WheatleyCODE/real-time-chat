@@ -17,5 +17,5 @@ Published https://chat-qb.web.app/
 - Typescript
 - Firebase
 - React-firebase-hooks
-- React-router-dom
+- React-router
 - SCSS
