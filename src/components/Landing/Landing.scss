@@ -1,6 +1,8 @@
 @import '../../styles/variables';
 
 .Landing {
+  height: Calc(100vh - 121px);
+  background-color: $colorBlue;
   h1 {
     font-size: 25px;
     color: $colorDarkBlue;
